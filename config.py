@@ -13,7 +13,7 @@ def get_google_api_key():
     api_key = os.environ.get("GOOGLE_API_KEY", "")
     if not api_key:
         # Fallback placeholder - User should start using .env or environment variables
-        api_key = "AIzaSyCUjsAkx1q7lj2Zf-Xl27z7gsvjfR0sKpo" 
+        api_key = "" 
     return api_key
 
 # Constants
