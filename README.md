@@ -52,8 +52,8 @@ Follow these instructions to get a copy of the project running on your local mac
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/yourusername/repolens.git
-    cd repolens
+    git clone https://github.com/shivshankargit/SourceIQ.git
+    cd SourceIQ
     ```
 
 2.  **Configure Environment:**
@@ -122,3 +122,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <p align="center">
   <small>Powered by Streamlit & Google Gemini</small>
 </p>
+
