@@ -1,0 +1,22 @@
+# System & Environment
+__pycache__/
+*.pyc
+.git/
+.gitignore
+.env
+venv/
+env/
+test/
+
+# Docker
+docker-compose.yml
+Dockerfile
+.dockerignore
+
+# Data & volumes
+my_project_code/
+postgres_data/
+
+# IDE
+.vscode/
+.idea/

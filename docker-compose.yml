@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  # 1. The Database (Postgres + pgvector)
+  db:
+    image: ankane/pgvector:latest
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: vectordb
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # 2. The Ingestion Pipeline (Runs ingest.py)
+  ingest:
+    build: .
+    command: python ingest.py
+    environment:
+      - COCOINDEX_DATABASE_URL=postgresql://user:password@db:5432/vectordb
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+    volumes:
+      - .:/app
+      - /app/test
+    depends_on:
+      - db
+
+  # 3. The Streamlit App (Frontend)
+  webapp:
+    build: .
+    command: streamlit run app.py
+    ports:
+      - "8501:8501"
+    environment:
+      # Note: 'db' is the hostname of the database service above
+      - COCOINDEX_DATABASE_URL=postgresql://user:password@db:5432/vectordb
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+    volumes:
+      - .:/app
+      - /app/test
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:

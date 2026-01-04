@@ -1,0 +1,17 @@
+# General
+__pycache__/
+*.pyc
+.DS_Store
+
+# Environment
+.env
+venv/
+env/
+.venv/
+
+# Large Model Data / VM
+test/
+postgres_data/
+
+# User Data
+my_project_code/
