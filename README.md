@@ -1,6 +1,5 @@
 # 🚀 SourceIQ: Chat with your Code
 
-![Project Status](https://img.shields.io/badge/Status-Active-success)
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
 ![Docker](https://img.shields.io/badge/Docker-Compose-orange)
 ![Streamlit](https://img.shields.io/badge/Frontend-Streamlit-red)
